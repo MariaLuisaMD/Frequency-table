@@ -1,2 +1,2 @@
-# Frequency-table
-Organizes data in a frequency table for statistical calculations
+# Frequency table
+Organizes data in a frequency table and performs statistical calculations
