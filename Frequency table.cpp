@@ -3,16 +3,18 @@
 using namespace std;
 
 vector <float> tab;
+float h;
 
 void calcula(float Xmin, float Xmax, int n){ 
-   float i,Li,c,Fi,Fac,Fr,h;
+   float i,Li,c,Fi,Fac,Fr;
    int k,j=0;
    
    k=round(sqrt(n));
    c=(Xmax-Xmin)/(k-1);
    Li=Xmin-(c/2);
 
-    printf("                  Fi    Fr  Fac\n");
+
+    cout<<setw(22)<<"Fi"<<setw(5)<<"Fr"<<setw(5)<<"Fac"<<endl;
 
     Fac=Fr=0;
 
@@ -24,11 +26,16 @@ void calcula(float Xmin, float Xmax, int n){
        }
        Fr=((Fi*100/n)/100);
        Fac+=Fr;
-       //cout<<i<<"|-> "<<i+c<<" "<<Fi<<" "<<((Fi*100)/n)/100<<"  "<<endl;
+      
       printf("%7.2f |-> %5.2f   %.f  %.2f %.2f\n",i,i+c,Fi,Fr,Fac);
    }
 
-
+   if(n%2==1){
+       h=tab[((n)/2)];
+   }
+   else{
+       h=(tab[(n/2)-1]+tab[((n+2)/2)-1])/2;
+   }
 }
 
 
@@ -61,5 +68,5 @@ int main(){
   cout<<"Variance : "<<var<<endl;
   cout<<"Standard deviation : "<<sqrt(var)<<endl;
   cout<<"Coefficient of variation : "<<(sqrt(var)/(total/n))*100<<" %"<<endl;
-  cout<<"First number of the set : "<<tab[0]<<endl<<"Last number of the set : "<<tab[n-1]<<endl<<"AT : "<<tab[n-1]-tab[0]<<endl;
+  cout<<"First number of the set : "<<tab[0]<<endl<<"Last number of the set : "<<tab[n-1]<<endl<<"AT : "<<tab[n-1]-tab[0]<<endl<<"Median: "<<h<<endl;
 }
