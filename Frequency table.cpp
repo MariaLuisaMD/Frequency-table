@@ -42,11 +42,12 @@ void calcula(float Xmin, float Xmax, int n){
 int main(){ 
    float numero,n,total,totalQ,var;
    float Xmax,Xmin;
-   
+   cout<<"Enter the amount of data"<<endl;
    cin>>n;
 
    total=totalQ=0;
-
+  cout<<"Enter the data: "<<endl;
+   
   for(int i=0;i<n;i++){
       cin>>numero;
       tab.push_back(numero);
